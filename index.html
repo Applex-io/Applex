@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Data</title>
+</head>
+<body>
+<script>
+    var $data = {
+    'platform': platform,
+    'searchtype': 'filters',
+    'filters': {
+        'relevance': [
+            { 'value': '#tech' },
+            { 'value': '#technology' }
+        ],
+        'followers': {
+            'left_number': 1000,
+            'right_number': 5000
+        },
+        'engagement_rate': {
+            'value': 0.005
+        },
+        'geo': [
+            { 'value': 148838 },
+            { 'value': 62149 }
+        ],
+        'gender': { 'value': 'MALE' },
+        'age': {
+            'left_number': 18,
+            'right_number': 44
+        },
+        'audience_brand_category': [
+            { 'value': 3, 'weight': 0.1 }
+        ]
+    },
+    'sort_by': 'followers',
+    'sort_order': 'desc'
+};
+    
+</script>
+</body>
+</html>
