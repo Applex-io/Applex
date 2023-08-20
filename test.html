@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST Data via JavaScript to RequestCatcher</title>
+</head>
+<body>
+
+Name: <input type="text" id="nameField"><br>
+Email: <input type="text" id="emailField"><br>
+<button id="submitButton">Submit</button>
+
+<script>
+document.getElementById("submitButton").addEventListener("click", function() {
+    const name = document.getElementById("nameField").value;
+    const email = document.getElementById("emailField").value;
+
+    const data = {
+        name: name,
+        email: email
+    };
+
+    fetch('https://myexample.requestcatcher.com/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);  // You can display this data in the DOM or handle it in other ways
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+</script>
+
+</body>
+</html>
